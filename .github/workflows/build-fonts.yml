@@ -114,11 +114,11 @@ jobs:
         body: |
           ## Bon-Code-Fonts v${{ steps.package-version.outputs.version }}
           
-          Korean hybrid coding fonts combining popular Latin fonts with Sarasa Fixed K for Korean characters.
+          Hybrid fixed-width monospace coding fonts, blended with popular Latin coding fonts and `Bon Gothic - 본고딕`.
           
           ### Available Fonts
-          - **Bon-GoogleSansCode**: Google Sans Code + Korean characters
-          - **Bon-JetBrainsMono**: JetBrains Mono + Korean characters
+          - **Bon-GoogleSansCode**: Google Sans Code + Sarasa Fixed K
+          - **Bon-JetBrainsMono**: JetBrains Mono + Sarasa Fixed K
           
           ### Installation
           1. Download the font zip file for your preferred base font
