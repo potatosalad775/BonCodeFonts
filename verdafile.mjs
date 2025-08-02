@@ -237,7 +237,7 @@ const HybridFont = file.make(
 		}
 		
 		const styleName = !(isItalic && weight === 'Regular') 
-			? weight + (isItalic ? "Italic" : "")
+			? weight + (isItalic ? " Italic" : "")
 			: "Italic";
 		
 		// Get extracted Korean font
