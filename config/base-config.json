@@ -1,0 +1,204 @@
+{
+  "fonts": {
+    "GoogleSansCode": {
+      "displayName": "Google Sans Code",
+      "familyName": "GoogleSansCode",
+      "monoWidth": 1200,
+      "sourcePath": "sources/GoogleSansCode",
+      "outputPrefix": "BonGoogleSansCode",
+      "weights": {
+        "Light": { 
+          "usWeightClass": 300, "available": true,
+          "latinSource": "Light",
+          "koreanSource": "Regular"
+        },
+        "Regular": { 
+          "usWeightClass": 400, "available": true,
+          "latinSource": "Regular",
+          "koreanSource": "SemiBold"
+        },
+        "Bold": { 
+          "usWeightClass": 700, "available": true,
+          "latinSource": "SemiBold",
+          "koreanSource": "Bold"
+        }
+      },
+      "hasItalic": true,
+      "metrics": {
+        "unitsPerEm": 2000,
+        "ascender": 1932,
+        "descender": -572,
+        "lineGap": 0
+      },
+      "koreanAdjustments": {
+        "scaleToMatchHeight": true,
+        "scaleX": 2.0,
+        "scaleY": 2.0,
+        "offsetX": -500,
+        "offsetY": 0,
+        "forceMonoWidth": false,
+        "useNativeWidth": false,
+        "targetWidth": 2000,
+        "centerInCell": true
+      }
+    },
+    "JetBrainsMono": {
+      "displayName": "JetBrains Mono",
+      "familyName": "JetBrainsMonoNL",
+      "monoWidth": 600,
+      "sourcePath": "sources/JetBrainsMono",
+      "outputPrefix": "BonJetBrainsMono",
+      "weights": {
+        "Light": { 
+          "usWeightClass": 300, 
+          "available": true,
+          "latinSource": "Thin",
+          "koreanSource": "Light"
+        },
+        "Regular": { "usWeightClass": 400, "available": true },
+        "SemiBold": { "usWeightClass": 600, "available": true },
+        "Bold": { "usWeightClass": 700, "available": true }
+      },
+      "hasItalic": true,
+      "metrics": {
+        "unitsPerEm": 1000,
+        "ascender": 1020,
+        "descender": -300,
+        "lineGap": 0
+      },
+      "koreanAdjustments": {
+        "scaleToMatchHeight": true,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "forceMonoWidth": false,
+        "useNativeWidth": false,
+        "targetWidth": 1000,
+        "centerInCell": true
+      }
+    },
+    "GoogleSansCodeVariable": {
+      "displayName": "Google Sans Code",
+      "familyName": "GoogleSansCode",
+      "monoWidth": 1200,
+      "sourcePath": "sources/GoogleSansCodeVariable",
+      "outputPrefix": "BonGoogleSansCode",
+      "isVariable": true,
+      "variableFontFiles": {
+        "regular": "GoogleSansCode[wght].ttf",
+        "italic": "GoogleSansCode-Italic[wght].ttf"
+      },
+      "weights": {
+        "Light": { 
+          "usWeightClass": 300, "available": true,
+          "latinSource": "Light",
+          "koreanSource": "Regular"
+        },
+        "Regular": { 
+          "usWeightClass": 400, "available": true,
+          "latinSource": "Regular",
+          "koreanSource": "SemiBold"
+        },
+        "Bold": { 
+          "usWeightClass": 700, "available": true,
+          "latinSource": "SemiBold",
+          "koreanSource": "Bold"
+        }
+      },
+      "hasItalic": true,
+      "metrics": {
+        "unitsPerEm": 2000,
+        "ascender": 1932,
+        "descender": -572,
+        "lineGap": 0
+      },
+      "koreanAdjustments": {
+        "scaleToMatchHeight": true,
+        "scaleX": 2.0,
+        "scaleY": 2.0,
+        "offsetX": -500,
+        "offsetY": 0,
+        "forceMonoWidth": false,
+        "useNativeWidth": false,
+        "targetWidth": 2000,
+        "centerInCell": true
+      }
+    },
+    "JetBrainsMonoVariable": {
+      "displayName": "JetBrains Mono",
+      "familyName": "JetBrainsMono",
+      "monoWidth": 600,
+      "sourcePath": "sources/JetBrainsMonoVariable",
+      "outputPrefix": "BonJetBrainsMono",
+      "isVariable": true,
+      "variableFontFiles": {
+        "regular": "JetBrainsMono[wght].ttf",
+        "italic": "JetBrainsMono-Italic[wght].ttf"
+      },
+      "weights": {
+        "Light": { 
+          "usWeightClass": 300, 
+          "available": true,
+          "latinSource": "Thin",
+          "koreanSource": "Light"
+        },
+        "Regular": { "usWeightClass": 400, "available": true },
+        "SemiBold": { "usWeightClass": 600, "available": true },
+        "Bold": { "usWeightClass": 700, "available": true }
+      },
+      "hasItalic": true,
+      "metrics": {
+        "unitsPerEm": 1000,
+        "ascender": 1020,
+        "descender": -300,
+        "lineGap": 0
+      },
+      "koreanAdjustments": {
+        "scaleToMatchHeight": true,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "forceMonoWidth": false,
+        "useNativeWidth": false,
+        "targetWidth": 1000,
+        "centerInCell": true
+      }
+    }
+  },
+  "koreanFont": {
+    "source": "SarasaFixedK",
+    "sourcePath": "sources/SarasaFixedK"
+  },
+  "unicodeRanges": {
+    "korean": {
+      "hangulSyllables": {
+        "range": [44032, 55215],
+        "description": "Complete Korean syllables (U+AC00-U+D7AF)"
+      },
+      "hangulJamo": {
+        "range": [4352, 4607],
+        "description": "Hangul Jamo (U+1100-U+11FF)"
+      },
+      "hangulCompatJamo": {
+        "range": [12592, 12687],
+        "description": "Hangul compatibility Jamo (U+3130-U+318F)"
+      },
+      "cjkPunctuation": {
+        "range": [12288, 12351],
+        "description": "CJK punctuation (U+3000-U+303F)",
+        "selective": [12288, 12289, 12290, 12300, 12301, 12302, 12303]
+      }
+    },
+    "exclude": {
+      "basicLatin": [0, 127],
+      "latinExtended": [128, 591]
+    }
+  },
+  "output": {
+    "directory": "out",
+    "formats": ["ttf"],
+    "includeMetadata": true
+  }
+}

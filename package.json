@@ -1,0 +1,45 @@
+{
+  "name": "boncode-fonts",
+  "version": "1.0.0",
+  "description": "Hybrid Korean coding fonts merging popular Latin fonts with Sarasa Fixed Korean",
+  "main": "./verdafile.mjs",
+  "type": "module",
+  "scripts": {
+    "build": "verda -f verdafile.mjs",
+    "build:google-sans": "verda -f verdafile.mjs google-sans",
+    "build:google-sans-variable": "verda -f verdafile.mjs google-sans-variable",
+    "build:jetbrains-mono": "verda -f verdafile.mjs jetbrains-mono",
+    "build:jetbrains-mono-variable": "verda -f verdafile.mjs jetbrains-mono-variable",
+    "clean": "verda -f verdafile.mjs clean",
+    "full-clean": "verda -f verdafile.mjs full-clean",
+    "test": "node script/test-fonts.mjs",
+    "test-all": "node script/test-all-fonts.mjs"
+  },
+  "dependencies": {
+    "@chlorophytum/cli": "^0.50.0",
+    "@chlorophytum/font-format-ttf": "^0.50.0",
+    "ot-builder": "^1.7.4",
+    "verda": "^1.12.2",
+    "fs-extra": "^11.2.0",
+    "which": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "fonts",
+    "korean",
+    "coding",
+    "monospace",
+    "hybrid"
+  ],
+  "license": "SIL-1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/potatosalad775/BonCodeFonts.git"
+  }
+}
