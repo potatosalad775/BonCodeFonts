@@ -204,7 +204,8 @@ const HybridFont = file.make(
 		const styleName = !(isItalic && weight === 'Regular') 
       ? weight + (isItalic ? "Italic" : "")
       : "Italic";
-		return `${OUT}/${fontKey}/Bon-${fontKey}-${styleName}.ttf`;
+		const fontKeyName = fontKey.replace('Variable', '');
+		return `${OUT}/${fontKey}/Bon-${fontKeyName}-${styleName}.ttf`;
 	},
 	async (t, out, fontKey, weight, isItalic) => {
 		const [config, version] = await t.need(Config, Version, de(out.dir));
