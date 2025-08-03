@@ -73,6 +73,9 @@ function updateHybridFontMetadata(font, argv) {
 	// Set head table flags
 	setHeadFlags(font, version);
 	
+	// Update meta table for proper language detection
+	setMetaTable(font);
+	
 	console.log(`Updated font metadata: ${familyName} ${styleName}`);
 }
 
@@ -123,8 +126,15 @@ function setOS2Metadata(font, isMonospace) {
 	// Fix and round usWeightClass
 	font.os2.usWeightClass = 100 * Math.round(font.os2.usWeightClass / 100);
 	
-	// Set Korean code page support
-	font.os2.ulCodePageRange1 |= Ot.Os2.CodePageRange1.CP949 | Ot.Os2.CodePageRange1.CP1361;
+	// Set specific code page support for hybrid coding fonts
+	// Clear existing code page flags and set only what we need
+	font.os2.ulCodePageRange1 = 
+		Ot.Os2.CodePageRange1.CP1252 |        // Latin 1 (essential for basic Latin)
+		Ot.Os2.CodePageRange1.CP949 |         // Korean (primary addition)
+		Ot.Os2.CodePageRange1.CP950;          // Chinese Traditional (from Sarasa)
+		
+	// Note: Removed European code pages (CP1250, CP1251, CP1254, CP1257) and 
+	// Macintosh flags that may confuse macOS Font Book's language detection
 	
 	// Set Panose classification
 	font.os2.panose = {
@@ -190,4 +200,21 @@ function getCompatibilityName(family, style) {
  */
 function toPostscriptName(name) {
 	return name.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9\-]/g, "");
+}
+
+/**
+ * Set meta table for proper language detection by macOS Font Book
+ * This tells the system which languages the font is designed to support
+ */
+function setMetaTable(font) {
+	// Create or update meta table to declare Korean and Latin support
+	// This helps macOS Font Book prioritize Korean text in previews
+	font.meta = {
+		data: [
+			["dlng", "Latn"],  // Default language: Latin (for Latin characters)
+			["slng", "Kore"]   // Supported language: Korean (prioritize Korean over Cyrillic)
+		]
+	};
+	
+	console.log("Updated meta table: Default=Latin, Supported=Korean");
 }

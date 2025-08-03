@@ -21,6 +21,12 @@ Hybrid fixed-width monospace coding fonts, blended with popular Latin coding fon
 - Available Weight: `Light`, `Regular`, `SemiBold`, `Bold`
 - Available Style: `Regular`, `Italic`
 
+### Bon Geist Mono
+![Bon-Geist-Mono Preview](./assets/preview_Geist_Mono.png)
+- `Geist Mono` + `Sarasa Fixed K`
+- Available Weight: `ExtraLight`, `Light`, `Regular`, `SemiBold`, `Bold`
+- Available Style: `Regular`, `Italic`
+
 ## Quick Start
 ### Download Pre-built Fonts
 1. Go to [Releases](../../releases)
@@ -68,9 +74,10 @@ See [SETUP.md](SETUP.md) for detailed build instructions.
 
 ## License
 
+- **Bon-Code-Fonts**: SIL Open Font License 1.1
 - **Sarasa Gothic**: SIL Open Font License 1.1
 - **Google Sans Code**: SIL Open Font License 1.1
 - **JetBrains Mono**: SIL Open Font License 1.1
-- **Bon-Code-Fonts**: SIL Open Font License 1.1
+- **Geist Mono**: SIL Open Font License 1.1
 
 See `LICENSE` file in `/sources/*` for full license text.

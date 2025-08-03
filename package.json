@@ -10,6 +10,7 @@
     "build:google-sans-variable": "verda -f verdafile.mjs google-sans-variable",
     "build:jetbrains-mono": "verda -f verdafile.mjs jetbrains-mono",
     "build:jetbrains-mono-variable": "verda -f verdafile.mjs jetbrains-mono-variable",
+    "build:geist-mono-variable": "verda -f verdafile.mjs geist-mono-variable",
     "clean": "verda -f verdafile.mjs clean",
     "full-clean": "verda -f verdafile.mjs full-clean",
     "test": "node script/test-fonts.mjs",

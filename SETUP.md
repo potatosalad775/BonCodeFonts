@@ -5,9 +5,9 @@ This repository contains everything needed to build hybrid Korean coding fonts. 
 ## What's Included
 
 ### Source Fonts (Already in Repository)
-- **Google Sans Code**: `sources/GoogleSansCode/` 
-  - 4 weights: Light, Regular, SemiBold, Bold
-  - Both regular and italic variants
+- **Google Sans Code**: `sources/GoogleSansCode/`
+- **JetBrains Mono**: `sources/JetBrainsMono/`
+- **Geist Mono**: `sources/GeistMono/`
 - **Sarasa Fixed K**: `sources/SarasaFixedK/`
   - Korean characters optimized for monospace
   - Matching weights and styles

@@ -7,6 +7,7 @@ async function analyzeFontMetrics() {
   const fonts = [
     { name: 'Google Sans Code Regular', path: 'sources/GoogleSansCode/GoogleSansCode-Regular.ttf' },
     { name: 'JetBrains Mono Regular', path: 'sources/JetBrainsMono/JetBrainsMonoNL-Regular.ttf' },
+    { name: 'Geist Mono Variable', path: 'sources/GeistMonoVariable/GeistMono[wght].ttf' },
     { name: 'Sarasa Fixed K Regular', path: 'sources/SarasaFixedK/SarasaFixedK-Regular.ttf' },
   ];
   

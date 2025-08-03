@@ -160,6 +160,24 @@ const JetBrainsMonoVariable = phony("jetbrains-mono-variable", async t => {
 	await t.need(buildTasks);
 });
 
+// JetBrains Mono Variable specific build
+const GeistMonoVariable = phony("geist-mono-variable", async t => {
+	const [config] = await t.need(Config);
+	const fontConfig = config.fonts.GeistMonoVariable;
+	
+	const buildTasks = [];
+	for (const [weightKey, weightConfig] of Object.entries(fontConfig.weights)) {
+		if (weightConfig.available) {
+			buildTasks.push(HybridFont("GeistMonoVariable", weightKey, false));
+			if (fontConfig.hasItalic) {
+				buildTasks.push(HybridFont("GeistMonoVariable", weightKey, true));
+			}
+		}
+	}
+	
+	await t.need(buildTasks);
+});
+
 // Extract Korean glyphs from Sarasa Fixed K
 const KoreanExtracted = file.make(
 	(fontKey, weight, isItalic) => `${BUILD}/korean/${fontKey}-${weight}${isItalic ? "-Italic" : ""}.ttf`,

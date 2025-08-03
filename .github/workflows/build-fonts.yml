@@ -30,6 +30,8 @@ jobs:
         ls -la sources/GoogleSansCodeVariable/
         echo "JetBrains Mono fonts:"
         ls -la sources/JetBrainsMonoVariable/
+        echo "Geist Mono fonts:"
+        ls -la sources/GeistMonoVariable/
         echo "Sarasa Fixed K fonts:"  
         ls -la sources/SarasaFixedK/
     
@@ -37,7 +39,8 @@ jobs:
       run: |
         npm run build:google-sans-variable
         npm run build:jetbrains-mono-variable
-    
+        npm run build:geist-mono-variable
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -45,6 +48,7 @@ jobs:
         path: |
           out/GoogleSansCodeVariable/*.ttf
           out/JetBrainsMonoVariable/*.ttf
+          out/GeistMonoVariable/*.ttf
         retention-days: 30
     
     - name: Create release archives
@@ -64,7 +68,13 @@ jobs:
           zip -r ../../releases/Bon-JetBrainsMono-${{ github.sha }}.zip *.ttf
           cd ../..
         fi
-        
+
+        if [ -d "out/GeistMonoVariable" ] && [ "$(ls -A out/GeistMonoVariable/*.ttf 2>/dev/null)" ]; then
+          cd out/GeistMonoVariable
+          zip -r ../../releases/Bon-GeistMono-${{ github.sha }}.zip *.ttf
+          cd ../..
+        fi
+
         # Create checksums
         cd releases
         if [ "$(ls -A *.zip 2>/dev/null)" ]; then
@@ -117,13 +127,14 @@ jobs:
           Hybrid fixed-width monospace coding fonts, blended with popular Latin coding fonts and `Bon Gothic - 본고딕`.
           
           ### Available Fonts
-          - **Bon-GoogleSansCode**: Google Sans Code + Sarasa Fixed K
-          - **Bon-JetBrainsMono**: JetBrains Mono + Sarasa Fixed K
+          - **Bon Google Sans Code**: Google Sans Code + Sarasa Fixed K
+          - **Bon JetBrains Mono**: JetBrains Mono + Sarasa Fixed K
+          - **Bon Geist Mono**: Geist Mono + Sarasa Fixed K
           
           ### Installation
           1. Download the font zip file for your preferred base font
           2. Extract and install the `.ttf` files
-          3. Select "Bon Google Sans Code" or "Bon JetBrains Mono" in your coding environment
+          3. Select installed font in your coding environment
           
           ### Verification
           SHA256 checksums are provided in `SHA256SUMS.txt`
@@ -150,6 +161,17 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: releases/Bon-JetBrainsMono-${{ github.sha }}.zip
         asset_name: Bon-JetBrainsMono-v${{ steps.package-version.outputs.version }}.zip
+        asset_content_type: application/zip
+    
+    - name: Upload Geist Mono Release Asset
+      if: hashFiles('releases/Bon-GeistMono-*.zip') != ''
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: releases/Bon-GeistMono-${{ github.sha }}.zip
+        asset_name: Bon-GeistMono-v${{ steps.package-version.outputs.version }}.zip
         asset_content_type: application/zip
     
     - name: Upload SHA256 Checksums

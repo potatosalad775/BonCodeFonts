@@ -165,6 +165,53 @@
         "targetWidth": 1000,
         "centerInCell": true
       }
+    },
+    "GeistMonoVariable": {
+      "displayName": "Geist Mono",
+      "familyName": "GeistMono",
+      "monoWidth": 600,
+      "sourcePath": "sources/GeistMonoVariable",
+      "outputPrefix": "BonGeistMono",
+      "isVariable": true,
+      "variableFontFiles": {
+        "regular": "GeistMono[wght].ttf",
+        "italic": "GeistMono-Italic[wght].ttf"
+      },
+      "weights": {
+        "ExtraLight": { 
+          "usWeightClass": 200, "available": true
+        },
+        "Light": { 
+          "usWeightClass": 300, "available": true
+        },
+        "Regular": { 
+          "usWeightClass": 400, "available": true
+        },
+        "SemiBold": { 
+          "usWeightClass": 600, "available": true
+        },
+        "Bold": { 
+          "usWeightClass": 700, "available": true
+        }
+      },
+      "hasItalic": true,
+      "metrics": {
+        "unitsPerEm": 1000,
+        "ascender": 1005,
+        "descender": -295,
+        "lineGap": 0
+      },
+      "koreanAdjustments": {
+        "scaleToMatchHeight": true,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "forceMonoWidth": false,
+        "useNativeWidth": false,
+        "targetWidth": 1000,
+        "centerInCell": true
+      }
     }
   },
   "koreanFont": {
