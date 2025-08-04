@@ -269,7 +269,11 @@ const HybridFont = file.make(
 			output: out.full,
 			familyName: `Bon ${fontConfig.displayName}`,
 			styleName: styleName,
-			version: version
+			version: version,
+			// Pass font configuration for proper metadata handling
+			fontConfig: fontConfig,
+			weightConfig: fontConfig.weights[weight],
+			outputPrefix: fontConfig.outputPrefix
 		});
 	}
 );

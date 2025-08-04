@@ -1,6 +1,6 @@
 {
   "name": "boncode-fonts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hybrid Korean coding fonts merging popular Latin fonts with Sarasa Fixed Korean",
   "main": "./verdafile.mjs",
   "type": "module",

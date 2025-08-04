@@ -137,6 +137,7 @@ function updateInstanceNames(font, weight, isItalic) {
 	if (!font.name || !font.name.records) return;
 	
 	const styleName = weight + (isItalic ? " Italic" : "");
+	const weightValue = getWeightValue(weight);
 	
 	// Update name records
 	for (const record of font.name.records) {
@@ -153,9 +154,31 @@ function updateInstanceNames(font, weight, isItalic) {
 		}
 	}
 	
-	// Update OS/2 weight class
+	// Update OS/2 weight class AND fsSelection
 	if (font.os2) {
-		font.os2.usWeightClass = getWeightValue(weight);
+		font.os2.usWeightClass = weightValue;
+		
+		// CRITICAL FIX: Update fsSelection for weight-specific Windows detection
+		// Variable fonts have generic fsSelection that doesn't work for instances
+		font.os2.fsSelection = Ot.Os2.FsSelection.USE_TYPO_METRICS;
+		
+		// Set weight-specific flags
+		if (weightValue >= 700) {
+			// Bold and heavier weights
+			font.os2.fsSelection |= Ot.Os2.FsSelection.BOLD;
+		} else {
+			// Light through SemiBold
+			font.os2.fsSelection |= Ot.Os2.FsSelection.REGULAR;
+		}
+		
+		// Add italic flag if needed
+		if (isItalic) {
+			font.os2.fsSelection |= Ot.Os2.FsSelection.ITALIC;
+			// Italic fonts should not have REGULAR flag even at 400 weight
+			font.os2.fsSelection &= ~Ot.Os2.FsSelection.REGULAR;
+		}
+		
+		console.log(`Updated fsSelection for ${styleName}: 0x${font.os2.fsSelection.toString(16)} (weight: ${weightValue})`);
 	}
 	
 	console.log(`Updated font names for ${styleName}`);
